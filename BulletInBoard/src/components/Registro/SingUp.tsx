@@ -6,6 +6,8 @@ import useForm from "../../Helpers/UseForm"
 import { FacebookRegister, GoogleRegister, MailRegister } from "../../Redux/Actions/Actions"
 import { useDispatch } from "react-redux"
 import { setUser } from "../../Redux/Slices/UsersSlices"
+import { addDoc, collection } from "firebase/firestore"
+import { dataBase } from "../../Firebase/FirebaseConfig"
 
 interface initialValues {
     name: string,
@@ -17,20 +19,21 @@ interface initialValues {
 
 const SingUp = () => {
 
+    const userCollection = collection(dataBase, "usuarios")
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
     const { dataForm, handleChange, reset } = useForm<initialValues>({
         name: "",
         email: "",
-        phone: "",        
+        phone: "",
         password: "",
         isAutenticated: false
     })
 
-    const handleSubmit = async (event:React.FormEvent) => {
+    const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault()
-        await MailRegister(dataForm.email,dataForm.password,dataForm.name,dataForm.phone,dataForm.isAutenticated).then((response) => {
+        await MailRegister(dataForm.email, dataForm.password, dataForm.name, dataForm.phone, dataForm.isAutenticated).then((response) => {
             dispatch(setUser(response))
         })
         reset()
@@ -38,16 +41,21 @@ const SingUp = () => {
     }
 
     const handleGoogle = async () => {
-        await GoogleRegister().then((response) => {
+        const response = await GoogleRegister()
+        if (response) {
             dispatch(setUser(response))
-        })
+            await addDoc(userCollection, response) 
+        }
+        
         navigate('/singin')
     }
 
     const handleFacebook = async () => {
-        await FacebookRegister().then((response) => {
+        const response = await FacebookRegister()
+        if (response) {
             dispatch(setUser(response))
-        })
+            await addDoc(userCollection, response) 
+        }
         navigate('/singin')
     }
 
@@ -57,10 +65,10 @@ const SingUp = () => {
             <h2 style={{ fontWeight: "200" }}>Sing Up</h2>
             <div className={styles.seccion2}>
                 <Formulario onSubmit={handleSubmit}>
-                    <input type="text" placeholder="Full Name" name="name" value={dataForm.name} onChange={handleChange}/>
-                    <input type="email" placeholder="Email" name="email" value={dataForm.email} onChange={handleChange}/>
-                    <input type="number" placeholder="Phone Number" name="phone" value={dataForm.phone} onChange={handleChange}/>
-                    <input type="password" placeholder="Password" name="password" value={dataForm.password} onChange={handleChange}/>
+                    <input type="text" placeholder="Full Name" name="name" value={dataForm.name} onChange={handleChange} />
+                    <input type="email" placeholder="Email" name="email" value={dataForm.email} onChange={handleChange} />
+                    <input type="number" placeholder="Phone Number" name="phone" value={dataForm.phone} onChange={handleChange} />
+                    <input type="password" placeholder="Password" name="password" value={dataForm.password} onChange={handleChange} />
                     <MyButton type="submit">Sing Up</MyButton>
                 </Formulario>
 

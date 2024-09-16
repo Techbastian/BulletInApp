@@ -26,29 +26,18 @@ const SingIn = () => {
             case 'google':
                 const google = await GoogleRegister()
                 if (google) {
-                    let googleuser = {
-                        uid: google.uid,
-                        displayName: google.displayName,
-                        email: google.email,
-                        photoURL: google.photoURL,
-                        isAutenticated: true
-                    }
-                    dispatch(setUser(googleuser))
+                    console.log(google)
+                    dispatch(setUser(google))
                 }
-
+                navigate('/home')
                 break;
             case 'facebook':
                 const facebook = await FacebookRegister()
                 if (facebook) {
-                    let facebookuser = {
-                        uid: facebook.uid,
-                        displayName: facebook.displayName,
-                        email: facebook.email,
-                        photoURL: facebook.photoURL,
-                        isAutenticated: true
-                    }
-                    dispatch(setUser(facebookuser))
+                    console.log(google)
+                    dispatch(setUser(facebook))
                 }
+                navigate('/home')
                 break;
 
         }

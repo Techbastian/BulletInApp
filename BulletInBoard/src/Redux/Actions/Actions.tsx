@@ -23,8 +23,7 @@ export const GoogleRegister = async () => {
                 notification: null,
                 payment: null,
             }
-            const reference = await addDoc(userCollection, userData)
-            console.log(reference.id)
+            
             return userData
         }
 

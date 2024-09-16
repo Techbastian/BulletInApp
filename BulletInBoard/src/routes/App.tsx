@@ -5,8 +5,9 @@ import Screen3 from "../components/Bienvenida/Screen3";
 import SingIn from "../components/Registro/SingIn";
 import SingUp from "../components/Registro/SingUp";
 import Home from "../components/Home";
+import Perfil from "../components/Perfil.tsx"
 import { Provider } from "react-redux";
-import { store } from "../Redux/Store";
+import { store } from "../Redux/Store.tsx";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/singin" element={<SingIn />} />
             <Route path="/singup" element={<SingUp />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/perfil" element={<Perfil />} />
           </Routes>
         </Provider>
       </BrowserRouter>
