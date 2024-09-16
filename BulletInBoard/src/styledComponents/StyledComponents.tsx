@@ -5,7 +5,7 @@ export const MyButton = styled.button`
     border: none;
     border-radius: 25px;
     width: 360px;
-    height: 32px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,7 +54,7 @@ export const Formulario = styled.form`
         border: none;
         border-radius: 22px;
         width: 100%;
-        height: 44px;
+        height: 35px;
         font-size: 14px;
         padding: 0 15px;
         color: gray;
@@ -66,7 +66,7 @@ export const Formulario = styled.form`
 `
 
 export const LogButtons = styled.div`
-    width: 75px;
+    width: 80px;
     height: 65px;
     display: flex;
     flex-direction: column;
