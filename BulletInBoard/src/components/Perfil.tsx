@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { auth } from '../firebase/FirebaseConfig';
 import { getUserProfile, updateUserProfile } from '../Helpers/GetUserProfile';
+import { auth } from '../Firebase/FirebaseConfig';
 
 interface Perfil{
     displayName: string;
