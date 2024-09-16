@@ -8,6 +8,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import CardActionArea from '@mui/material/CardActionArea';
+import '../styles/home.css'
+import { Typography } from '@mui/material';
 // import { onAuthStateChanged } from 'firebase/auth';
 // import { auth } from '../firebase/firebaseConfig';
 // import { useDispatch } from 'react-redux';
@@ -60,7 +62,7 @@ const Home = () => {
                         <img src={user.photoURL ? user.photoURL : 'https://i.pinimg.com/564x/9c/b9/8a/9cb98a68fde112c7a23a217bc8cdb487.jpg'} alt="" width='30px' height='30px' />
                         <div>
                             <span>Hi!</span>
-                            <span>{user.displayName}</span>
+                            <span>{user.displayName ? user.displayName : 'Nombre de usuario'}</span>
                         </div>
                     </div>
                     <img src={noti} alt="" width='30px' height='30px' />
@@ -68,37 +70,26 @@ const Home = () => {
                 <SliderHome />
             </HeaderHome>
             <MainHome>
-                <div className='clas-explorer d-flex-row' style={{ position: 'relative' }}>
-                    <span
-                        className='actived'
-                        style={{
-                            transform: activeButton === 0 ? 'translateX(-50%)' : 'translateX(50%)',
-                            transition: 'transform 0.3s ease',
-                        }}
-                    ></span>
-                    <button onClick={() => handleClick(0)}>Discover</button>
-                    <button onClick={() => handleClick(1)}>My workouts</button>
+                <div className='vie'>
+                    <p>Recently viewed</p>
+                    <p> ( ) </p>
                 </div>
-                <Divider height='40px' />
-                <Card sx={{ maxWidth: 345, background: 'none', border: 0, borderRadius: '.8em', boxShadow: 'none', color: '#fff' }}>
-                    <CardActionArea>
+                <Card sx={{ maxWidth: 345, background: 'none', border: 0, borderRadius: '.8em', boxShadow: 'none', color: '#000', backgroundColor: '#ebfff6' }}>
+                    <CardActionArea >
                         <CardMedia
                             component="img"
                             height="140"
-                            image="https://res.cloudinary.com/ian63k/image/upload/v1726147484/mnsfnydyryzuxffyumyy.png"
+                            image="https://d34vmoxq6ylzee.cloudfront.net/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/4/3/43K30LT-1_T1679066178.png"
                             alt="green iguana"
                         />
-                        <CardContent style={{ background: '#2e3562' }}>
-                            <ContentCard>
-                                <div className='card__info'>
-                                    <h3>Split 3 days</h3>
-                                    <p>the workout is divided into 3 days, day 1 biceps back day 2 triceps chest day 3 shoulders legs</p>
+                        <CardContent>
+                            <div>
+                                <p>820$</p>
+                                <div className='d-flex-row'>
+                                    <p>name</p>
+                                    <p>12 km</p>
                                 </div>
-                                <div className='card__time'>
-                                    <h3>45 min</h3>
-                                    <span>free</span>
-                                </div>
-                            </ContentCard>
+                            </div>
                         </CardContent>
                     </CardActionArea>
                 </Card>

@@ -1,8 +1,8 @@
 import Slider from 'react-slick'
 
 const SliderHome = () => {
-    
-    
+
+
     const settings = {
         dots: false,
         slidesToShow: 2,
@@ -17,10 +17,10 @@ const SliderHome = () => {
         <div className="slider-container slider-home">
             <Slider {...settings}>
                 <div>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrcVSNvQkfj1MhHlTzKE_vXLu1vCvDnXPbJA&s" alt="" />
+                    <img src="https://hackmd.io/_uploads/rk61MJUaR.png" alt="" />
                 </div>
                 <div>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrcVSNvQkfj1MhHlTzKE_vXLu1vCvDnXPbJA&s" alt="" />
+                    <img src="https://hisense.com.co/wp-content/uploads/2023/10/Kv_Hi-Sale_02_web-1.jpg" alt="" />
                 </div>
 
             </Slider>

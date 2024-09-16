@@ -210,7 +210,7 @@ const ContainerHeader = styled.div`
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        color: #fff;
+        color: #000;
         z-index: 11;
         gap: 1rem;
 
@@ -221,6 +221,13 @@ const ContainerHeader = styled.div`
             font-size: .8rem;
             font-weight: 200;
             flex-direction: column;
+
+            span {
+                font-size: .8rem;
+                font-weight: 200;
+                color: #000;
+                font-weight: 500;
+            }
         }
 
         img {
@@ -257,13 +264,21 @@ const WrapperElements = styled.div`
 const MainHome = styled.main`
     position: relative;
     display: flex;
-    top: 120px;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;;
     flex-wrap: wrap;
     width: 100%;
     gap: 1rem;
     padding-bottom: 1rem;
+
+    .vie{
+        width: 100%;
+        max-width: 1400px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
 `;
 
 const ContentCard = styled.div`

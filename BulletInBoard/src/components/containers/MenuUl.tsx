@@ -1,5 +1,4 @@
-import setting from '../../assets/svg/setting-lines.svg'
-import notification from '../../assets/img/Notification.svg'
+import notification from '../../assets/img/Notificationicon.png'
 import { styled } from '@mui/material/styles';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
@@ -45,7 +44,7 @@ const MenuUl = () => {
         <>
             <ul>
                 <li onClick={() => console.log('Setting')}>
-                    <img src={setting} alt="" />
+                    <img src='' alt="" />
                     <span>Settings</span>
                 </li>
                 <li onClick={() => console.log('Setting')}>
