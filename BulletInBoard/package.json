@@ -10,11 +10,25 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@reduxjs/toolkit": "^2.2.7",
+=======
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^6.1.0",
+    "@reduxjs/toolkit": "^2.2.7",
+    "@types/react-slick": "^0.23.13",
+    "@types/react-router-dom": "^5.3.3",
+    "axios": "^1.7.7",
+>>>>>>> 0b2ee73c6ed31a627235c9a98cc8a8469b5cde1c
     "firebase": "^10.13.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",
+<<<<<<< HEAD
+=======
+    "react-slick": "^0.30.2",
+>>>>>>> 0b2ee73c6ed31a627235c9a98cc8a8469b5cde1c
     "react-router-dom": "^6.26.2",
     "styled-components": "^6.1.13"
   },
