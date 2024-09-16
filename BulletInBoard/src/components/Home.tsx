@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-// import { useState } from 'react';
 import noti from '../assets/img/Notificationicon.png';
 import { ContainerHeader, HeaderHome, MainHome, WrapperElements } from '../styledComponents/containers';
 import MenuUl from './containers/MenuUl';
@@ -9,39 +8,42 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import CardActionArea from '@mui/material/CardActionArea';
 import '../styles/home.css'
-import location from '../assets/img/location.svg';
 import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../firebase/FirebaseConfig';
-import { useDispatch } from 'react-redux';
+import { auth } from '../Firebase/FirebaseConfig';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser } from '../Redux/Slices/UsersSlices';
+import location from '../assets/img/location.svg'
 
 const Home = () => {
 
-    interface User {
-        displayName: string | null;
-        photoURL: string | null | undefined;
-    }
+    const dispatch = useDispatch()
 
     const [isMenuVisible, setIsMenuVisible] = useState(false);
-    const dispatch = useDispatch();
-    const [user, setUser] = useState({} as User);
-
 
     const toggleMenu = () => {
         setIsMenuVisible(!isMenuVisible);
     };
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const validateuser = onAuthStateChanged(auth, (user) => {
             if (user) {
-                console.log('usuario loggeado en', user);
-                setUser(user);
-            } else {
-                console.log('usuario no loggeado');
+                console.log(user)
+                const auth = {
+                    uid: user.uid,
+                    displayName: user.displayName,
+                    email: user.email,
+                    photoURL: user.photoURL,
+                    isAutenticated: true
+                }
+                dispatch(setUser(auth))
             }
-        });
+        })
+
+        return () => validateuser()
     }, [dispatch]);
 
-
+    const authUser = useSelector((store: any) => store.user)
+    console.log(authUser)
     return (
         <WrapperElements>
             <div className='div_user_settings' style={{
@@ -55,10 +57,10 @@ const Home = () => {
             <HeaderHome>
                 <ContainerHeader>
                     <div className='cont__row user_settings' onClick={toggleMenu} >
-                        <img src={user.photoURL ? user.photoURL : 'https://i.pinimg.com/564x/9c/b9/8a/9cb98a68fde112c7a23a217bc8cdb487.jpg'} alt="" width='30px' height='30px' />
+                        <img src={authUser.photoURL ? authUser.photoURL : 'https://i.pinimg.com/564x/9c/b9/8a/9cb98a68fde112c7a23a217bc8cdb487.jpg'} alt="" width='30px' height='30px' />
                         <div>
                             <span>Hi!</span>
-                            <span>{user.displayName ? user.displayName : 'Nombre de usuario'}</span>
+                            <span>{authUser.displayName ? authUser.displayName : 'Nombre de usuario'}</span>
                         </div>
                     </div>
                     <img src={noti} alt="" width='30px' height='30px' />
