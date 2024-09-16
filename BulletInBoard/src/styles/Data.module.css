@@ -1,0 +1,88 @@
+#principal{
+    padding: 50px 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#separador{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.field{
+    background-color: #2E3562;
+    border: none;
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    font-size: 80px;
+    color: white;
+    text-align: center;
+}
+
+.kilos{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.kilos p{
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.gender{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.customradio{
+    width: 130px;
+    height: 170px;
+}
+
+.customradio input{
+    display: none;
+}
+
+.radiobtn{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.radiobtn p{
+    font-size: 18px;
+}
+
+.genders{
+    width: 100%;
+    height: 130px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2BE7E8;
+} 
+
+.customradio input:checked + .radiobtn .genders{
+    background-color: #2E3562;
+    border: none;
+    font-size: 110px;
+    transition: font-size 0.1s ease-in;
+}
