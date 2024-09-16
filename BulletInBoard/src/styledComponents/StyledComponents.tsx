@@ -95,3 +95,38 @@ export const LogButtons = styled.div`
         }
     }
 `
+export const Footer = styled.footer`
+    width: 100%;
+    height: 45px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+
+    ul{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    ul li{
+        list-style: none;
+        height: 100%;
+        width: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ul li button{
+        background: transparent;
+        border: none;
+        font-size: 25px;
+        width: 100%;
+        height: 100%;
+    }
+`

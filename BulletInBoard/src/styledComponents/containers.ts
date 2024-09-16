@@ -37,7 +37,7 @@ const DivInputs = styled.div`
 `;
 
 const DivInputsPhone = styled.div`
-   position: relative;
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -234,8 +234,6 @@ const ContainerHeader = styled.div`
             border-radius: 50%;
             object-fit: contain;
         }
-
-       
     }
 `;
 
