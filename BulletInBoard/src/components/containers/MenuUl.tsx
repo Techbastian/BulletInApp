@@ -2,10 +2,13 @@ import notification from '../../assets/img/Notificationicon.png'
 import { styled } from '@mui/material/styles';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-
+import { CiSettings } from "react-icons/ci";
+import { IoIosNotificationsOutline } from "react-icons/io";
+import { FiActivity } from "react-icons/fi";
+import { useNavigate } from 'react-router-dom';
 
 const MenuUl = () => {
-
+    const navigate = useNavigate()
     const Android12Switch = styled(Switch)(({ theme }) => ({
         padding: 8,
         '& .MuiSwitch-track': {
@@ -43,17 +46,17 @@ const MenuUl = () => {
 
         <>
             <ul>
-                <li onClick={() => console.log('Setting')}>
-                    <img src='' alt="" />
+                <li onClick={() => navigate('/perfil')}>
+                    <CiSettings />
                     <span>Settings</span>
                 </li>
                 <li onClick={() => console.log('Setting')}>
-                    <img src={notification} alt="" />
+                    <IoIosNotificationsOutline />
                     <span>Notificaction</span>
                     <FormControlLabel control={<Android12Switch />} label="" />
                 </li>
                 <li onClick={() => console.log('Setting')}>
-                    <img src='' alt="" />
+                    <FiActivity />
                     <span>Activity</span>
                 </li>
                 <li onClick={() => console.log('Setting')}>

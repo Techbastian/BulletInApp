@@ -25,7 +25,7 @@ function App() {
             <Route path="/singup" element={<SingUp />} />
             <Route path="/home" element={<Home />} />
             <Route path="/perfil" element={<Perfil />} />
-            <Route path="/item-detail" element={<ItemDetail />} />
+            <Route path="/item-detail/:id" element={<ItemDetail />} />
           </Routes>
         </Provider>
       </BrowserRouter>

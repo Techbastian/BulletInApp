@@ -106,7 +106,7 @@ const Home = () => {
                     products.map((producto) => (
                         <Card sx={{ maxWidth: 345, background: 'none', border: 0, borderRadius: '.8em', boxShadow: 'none', color: '#000', backgroundColor: '#ebfff6' }}>
                             <CardActionArea >
-                            <Link to={`/productPage/${producto.uid}`}><CardMedia
+                            <Link to={`/item-detail/${producto.uid}`}><CardMedia
                                     component="img"
                                     height="140"
                                     image={producto.photoURL}
