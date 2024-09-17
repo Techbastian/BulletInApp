@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import noti from '../assets/img/Notificationicon.png';
-import { ContainerHeader, Divider, HeaderHome, MainHome, WrapperElements, ContentCard } from '../styledComponents/containers';
+import { ContainerHeader, HeaderHome, MainHome, WrapperElements } from '../styledComponents/containers';
 import MenuUl from './containers/MenuUl';
 import SliderHome from './slider/SliderHome';
 import Card from '@mui/material/Card';
@@ -8,7 +8,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import CardActionArea from '@mui/material/CardActionArea';
 import '../styles/home.css'
-import { Typography } from '@mui/material';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth, dataBase } from '../Firebase/FirebaseConfig';
 import { useDispatch, useSelector } from 'react-redux';
@@ -30,22 +29,12 @@ interface product {
 }
 
 const Home = () => {
-    interface User {
-        displayName: string | null;
-        photoURL: string | null | undefined;
-    }
 
     const dispatch = useDispatch()
 
     const [products, setProducts] = useState<any[]>([])
     const [activeButton, setActiveButton] = useState(0);
     const [isMenuVisible, setIsMenuVisible] = useState(false);
-    // const dispatch = useDispatch();
-    const [usuario, setUsuario] = useState({} as User);
-
-    const handleClick = (index: number) => {
-        setActiveButton(index);
-    };
 
     const toggleMenu = () => {
         setIsMenuVisible(!isMenuVisible);

@@ -8,7 +8,7 @@ import Home from "../components/Home";
 import Perfil from "../components/Perfil.tsx"
 import { Provider } from "react-redux";
 import { store } from "../Redux/Store.tsx";
-import ProductPage from "../components/ProductPage.tsx";
+import ItemDetail from "../components/ItemDetail.tsx";
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
             <Route path="/singup" element={<SingUp />} />
             <Route path="/home" element={<Home />} />
             <Route path="/perfil" element={<Perfil />} />
-            <Route path="/productPage/:id" element={<ProductPage />} />
+            <Route path="/item-detail" element={<ItemDetail />} />
           </Routes>
         </Provider>
       </BrowserRouter>
