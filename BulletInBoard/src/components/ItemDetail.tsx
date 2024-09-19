@@ -7,6 +7,7 @@ import NavBar from "./containers/NavBar"
 
 const ItemDetail = () => {
   return (
+    <>
     <Wrapper>
       <div className="d-flex-column header__item">
         <figure className="d-flex">
@@ -41,8 +42,10 @@ const ItemDetail = () => {
         </div>
 
       </div>
-      <div><NavBar /></div>
+      
     </Wrapper>
+    <NavBar />
+    </>
   )
 }
 
