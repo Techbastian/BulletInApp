@@ -3,6 +3,7 @@ import save from "../assets/img/save.svg"
 import "../styles/home.css"
 import location from '../assets/img/location.svg'
 import Map from '../assets/img/Map.png'
+import NavBar from "./containers/NavBar"
 
 const ItemDetail = () => {
   return (
@@ -40,6 +41,7 @@ const ItemDetail = () => {
         </div>
 
       </div>
+      <div><NavBar /></div>
     </Wrapper>
   )
 }
